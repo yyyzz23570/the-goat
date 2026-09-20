@@ -17,3 +17,14 @@ Truthful record of AI / Cursor help on the SYSEN 5151 `the-goat` repository. Thi
 
 - Cursor UI layout questions (editor vs. chat panel) are not project work.
 - A local model / model runner is still TBD and was not set up in this session.
+
+
+## Chapter 2 alignment update — 2026-09-20
+
+**Task:** Align the runnable Walking Skeleton with the approved Innoslate primary sequence.
+
+**Tool:** Codex.
+
+**Prompt:** Update the stubbed end-to-end flow to follow UC.1.1, UC.1.3, UC.1.4, UC.1.5, UC.1.6, UC.1.7, and UC.1.9. Keep all participants local and hard-coded; do not add real model, map, POI, authentication, retry, or logging behavior. Update the tests and walking-skeleton documentation to verify the same order.
+
+**Result used:** Updated `backend/app.py`, `backend/test_app.py`, and `docs/walking-skeleton.md`. The LLM stub now selects from governed candidates before Wayly builds the itinerary; the Map Provider stub validates the built route afterward.
