@@ -1,5 +1,7 @@
 # frontend
 
-Placeholder for the client / UI application.
+Lab 0 minimal page for Wayly / the-goat.
 
-This directory is empty by design. Frontend code and tooling will be added after the team selects a tech stack.
+`index.html` calls `GET /api/itinerary` and renders the hard-coded API message, including `Hello from the-goat API!`.
+
+Start the backend to serve this page at `http://127.0.0.1:8000/`.

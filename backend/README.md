@@ -1,5 +1,10 @@
 # backend
 
-Placeholder for the server, API, and related services.
+Lab 0 minimal API for Wayly / the-goat.
 
-This directory is empty by design. Backend code and tooling will be added after the team selects a tech stack.
+`app.py` exposes:
+
+- `GET /api/health` — service check
+- `GET /api/itinerary` — **hard-coded** JSON response
+
+This is a course readiness check. It does not generate itineraries, call an LLM, or call a map API. A teammate may later migrate the full Wayly implementation into this repository.

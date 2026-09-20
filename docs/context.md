@@ -8,7 +8,7 @@ This file does **not** define new APIs or implementation details.
 
 ## System of interest
 
-**Wayly System** (途鉴): the planned trusted local-exploration system that accepts traveler trip preferences and returns an explainable, adjustable, traceable itinerary, with an operations-console concept for verification, feedback, evaluation, and release gates.
+**Wayly System** (途鉴): the planned trusted local-exploration system for **New York** short-trip travelers. It accepts traveler trip preferences and returns an explainable, adjustable, traceable itinerary, with an operations-console concept for verification, feedback, evaluation, and release gates.
 
 ## External entities
 

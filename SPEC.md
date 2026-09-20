@@ -24,13 +24,14 @@ Related files:
 ## 2. Purpose and scope
 
 - Purpose of the system (see README OpsCon)
+- Geographic scope for this course repository: **New York**
 - In-scope for the current course stage
 - Out of scope / not claimed by this repository
-- Relationship to the current implementation source and the planned migration into this repository
+- Relationship to the current Beijing implementation source and the planned New York adaptation after migration
 
 ## 3. Operational concept (OpsCon)
 
-- Traveler goal and expected use
+- Traveler goal and expected use in New York
 - High-level flow: preference input → Wayly result → traveler review/adjustment
 - Operations-console concept
 - Assumptions and non-promises (tickets, live hours, navigation, payments)
@@ -69,15 +70,17 @@ Related files:
 
 ## 9. Constraints and assumptions
 
-- This repository is the course project repository; it is currently documentation/scaffold until the teammate migrates the working application here
-- Do not reimplement the application in parallel with that migration
+- This repository is the course project repository
+- Lab 0 currently provides a hard-coded API and a page that renders it; that is not the full Wayly product
+- Do not reimplement the full application in parallel with the teammate migration
 - Technology choices: see ADR `0001-initial-toolchain.md`; unresolved items remain TBD
 
 ## 10. Verification and validation
 
 - Course documentation completeness
+- Lab 0: `python -m pytest -q` and GitHub Actions
 - Consistency with Innoslate and the course report TBD / To be confirmed
-- Implementation verification belongs with the migrated application files once they are in this repository; until then it remains with the current implementation source
+- Full product verification belongs with the migrated application files once they are in this repository
 
 ## 11. Open items
 

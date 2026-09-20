@@ -15,26 +15,26 @@ A teammate (Jingbo He) later recorded a proposed backend/deployment note: SQLite
 
 For the current SYSEN 5151 stage of **this** repository:
 
-1. Treat `the-goat` as the course **project** repository. Documentation/scaffold is here now; application code will arrive by teammate migration.
+1. Treat `the-goat` as the course **project** repository.
 2. Use **Git + GitHub** as the shared version-control toolchain.
-3. Use **Cursor** for AI-assisted documentation and repository organization in this workspace.
-4. Do **not** reimplement or replace the teammate's application while they migrate it here.
-5. Record Jingbo's SQLite / Netlify / OpenAI note as a **proposal only**, not as an implemented stack in this repository.
-6. Record Wayly-mvp1 technologies as the current implementation's observed stack. After migration, update this ADR / `docs/environment.md` to match what is actually in `the-goat`.
+3. Use **Cursor** for AI-assisted documentation and Lab 0 setup in this workspace.
+4. For Lab 0 only, use **Python + Flask + static HTML + pytest + GitHub Actions**. The API response is hard-coded.
+5. Do **not** replace the teammate's full Wayly application with this Lab 0 baseline. The teammate will migrate the full implementation here later.
+6. Record Jingbo's SQLite / Netlify / OpenAI note as a **later proposal**, not as Lab 0.
+7. After the full migration, update this ADR / `docs/environment.md` to match what is actually in `the-goat`.
 
 ## Rationale
 
 - The course repository needed a shared, low-risk first commit and a place for systems-engineering documents.
-- Reimplementing Wayly here in parallel would interfere with the teammate's working codebase and migration.
-- Claiming a full web stack here would be false until those files actually land in this repository.
-- Cursor is the assistant already used for scaffold and documentation work in this project.
+- Lab 0 requires a hard-coded API, a page that renders it, and CI. Python/Flask/HTML is enough and does not copy or redesign Wayly-mvp1.
+- Reimplementing the full Wayly product here would interfere with the teammate migration.
+- Cursor is already used for scaffold, documentation, and this Lab 0 baseline.
 
 ## Consequences
 
-- This repository cannot be started as the Wayly application **until the migration lands**.
-- Readers must use `README.md` and `docs/environment.md` to distinguish current scaffold/docs from the source implementation.
-- Two toolchain notes now exist (Jingbo proposal vs. Wayly-mvp1 observed stack) and must not be silently merged.
-- After migration, environment and start instructions in this repository should be updated from the files that arrive, not guessed in advance.
+- This repository can run the Lab 0 page at `http://127.0.0.1:8000/`.
+- It cannot yet be started as the full Wayly application.
+- After migration, environment and start instructions should be updated from the files that arrive.
 
 ## TBD items
 
@@ -42,5 +42,4 @@ For the current SYSEN 5151 stage of **this** repository:
 - Canonical Map Provider API
 - Whether VS Code is an official team editor in addition to Cursor
 - Whether a local model / model runner will be used
-- Whether Lab 0 minimal API/frontend or CI workflows will later be added to this repository
 - Exact layout of the migrated application inside `the-goat` (to be confirmed by the teammate doing the migration)
