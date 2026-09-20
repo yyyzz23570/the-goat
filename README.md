@@ -91,3 +91,4 @@ SYSEN 5151 — team repository: `the-goat`
 ## Member
 
 Yuzheng Liu, Jingbo He, Siyuan Chen, Yunkuan Liu
+, Qinyue Xie
