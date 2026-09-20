@@ -1,59 +1,35 @@
 # Walking Skeleton
 
-Course demo for SYSEN 5151 Chapter 1–2. This is a stubbed end-to-end path, not the full Wayly product.
+Course demo for SYSEN 5151 Chapter 2. This is one stubbed end-to-end path, not the full Wayly product.
 
 ## Purpose
 
-Show one Traveler request passing through the current Sequence Diagram participants, using hard-coded stubs only.
+Show one Traveler request passing through the participants in the approved Innoslate sequence and returning a response of the correct shape.
 
 ## Scope
 
-In scope:
+All participants use hard-coded local data. The demonstration makes no real LLM, map, POI, database, or authentication call. Retries, production logging, and complete itinerary logic remain outside this increment.
 
-- Traveler requests a New York itinerary placeholder
-- Wayly System receives the request
-- Wayly System calls a Map Provider API stub
-- Wayly System calls an LLM API stub
-- Wayly System returns a combined hard-coded JSON page
+## Numbered call list
 
-Out of scope:
+1. **UC.1.1** — Traveler → Wayly System: Submit Planning Request.
+2. **UC.1.3** — Wayly System resolves a hard-coded curated candidate set.
+3. **UC.1.4** — Wayly System → LLM API stub: Select Candidate Route from that set.
+4. **UC.1.5** — Wayly System: Build Candidate Itinerary from the selected route.
+5. **UC.1.6** — Wayly System → Map Provider API stub: Request Route Validation.
+6. **UC.1.7** — Map Provider API stub → Wayly System: Validate Route Data.
+7. **UC.1.9** — Wayly System → Traveler: Return Trusted Itinerary.
 
-- Real LLM calls
-- Real map APIs
-- Real POI data
-- Databases
-- Authentication
-- Retries, production logging, or full itinerary logic
+The order matches the final Action, Activity, and Sequence Diagrams. UC.1.5 is internal Wayly processing, so it may not appear as a message between lifelines in the Sequence Diagram.
 
-## User action
+## Participant implementation
 
-The Traveler opens `http://127.0.0.1:8000/` and clicks **Request stub itinerary** (the page also loads once automatically).
-
-The current stub request does **not** collect date, budget, or other preference fields. It is an implied New York default request. Full preference fields remain TBD / To be confirmed.
-
-## Sequence of component calls
-
-```text
-Traveler
-  → Wayly System          GET /api/itinerary
-    → Map Provider API    stub_map_provider()   hard-coded
-    → LLM API             stub_llm_api(...)     hard-coded
-  ← Wayly System          JSON itinerary placeholder
-Traveler sees the page
-```
-
-Call order in `backend/app.py` is Map Provider API stub, then LLM API stub. If the Innoslate diagram uses the opposite order, that remains TBD / To be confirmed.
-
-The stubs are local Python functions inside the Wayly System process. They are not separate hosted services and they do not make network calls.
-
-## What is stubbed
-
-| Participant | Implementation | Real call? |
-| --- | --- | --- |
-| Traveler | Browser page `frontend/index.html` | No preference form |
-| Wayly System | Flask `GET /api/itinerary` | Yes, local process only |
-| Map Provider API | `stub_map_provider()` | No |
-| LLM API | `stub_llm_api(map_data)` | No |
+| Participant | Implementation | Real external call? |
+|---|---|---|
+| Traveler | Browser page in `frontend/index.html` | No preference form |
+| Wayly System | Flask `GET /api/itinerary` | Local process only |
+| LLM API | `stub_llm_api(candidates)` | No |
+| Map Provider API | `stub_map_provider(stops)` | No |
 
 ## Example request
 
@@ -62,28 +38,18 @@ GET /api/itinerary HTTP/1.1
 Host: 127.0.0.1:8000
 ```
 
-No request body. Implied city: New York.
+## Expected response evidence
 
-## Example response
+The JSON response includes `status: trusted`, a hard-coded New York stop list, LLM and map stub records, and a `call_sequence` array containing UC.1.1, UC.1.3, UC.1.4, UC.1.5, UC.1.6, UC.1.7, and UC.1.9 in order.
 
-The body is JSON. It always includes:
-
-- `message`: `Hello from the-goat API!`
-- `city`: `New York`
-- `map_stub`: hard-coded Map Provider API participant
-- `llm_stub`: hard-coded LLM API participant
-- `stops`: placeholder published place
-
-Provider product names (OpenAI, DeepSeek, a named map vendor) are not claimed. Those remain TBD / To be confirmed.
-
-## Run / demo steps
+## Run and verify
 
 ```bash
 python -m pip install -r backend/requirements.txt
 python backend/app.py
 ```
 
-Open `http://127.0.0.1:8000/`. Confirm the page shows `Hello from the-goat API!`, `New York`, `Map Provider API`, and `LLM API`.
+Open `http://127.0.0.1:8000/` and click **Request stub itinerary**. In another terminal, run:
 
 ```bash
 python -m pytest -q
