@@ -30,8 +30,8 @@ Direction uses the source → destination convention. Formats are recorded only 
 | Source | Traveler |
 | Destination | Wayly System |
 | Direction | Traveler → Wayly System |
-| Information exchanged | Trip preferences already described at concept level: date, duration, number of travelers, total itinerary budget, interests, natural-language intent, transport/walking preference, dining constraints, and accessibility needs |
-| Data / message format | TBD / To be confirmed. Not specified in this course repository. |
+| Information exchanged | Concept-level trip preferences: date, duration, number of travelers, total itinerary budget, interests, natural-language intent, transport/walking preference, dining constraints, and accessibility needs |
+| Data / message format | Current walking skeleton: implied New York default request via `GET /api/itinerary` with no body. Full preference fields remain TBD / To be confirmed. |
 
 ### 2. Wayly System returns an itinerary
 
@@ -40,8 +40,8 @@ Direction uses the source → destination convention. Formats are recorded only 
 | Source | Wayly System |
 | Destination | Traveler |
 | Direction | Wayly System → Traveler |
-| Information exchanged | Candidate itinerary information already described at concept level: published places, source snapshots, static transport estimates, and adjustable itinerary content |
-| Data / message format | TBD / To be confirmed. Not specified in this course repository. |
+| Information exchanged | Candidate itinerary information: published-place placeholder, source note, static transport estimate stub, and adjustable-itinerary placeholder |
+| Data / message format | Current walking-skeleton JSON from `GET /api/itinerary`: `message`, `city`, `map_stub`, `llm_stub`, `stops`. This is a course stub, not a production contract. |
 
 ### 3. Wayly System requests controlled LLM reasoning
 
@@ -51,12 +51,11 @@ Direction uses the source → destination convention. Formats are recorded only 
 | Destination | LLM API |
 | Direction | Wayly System → LLM API (request), LLM API → Wayly System (response) |
 | Information exchanged | A controlled planning/reasoning request and a structured model response. Product principle: the model may only reason over information supplied by the Wayly System; it is not the source of place facts. |
-| Data / message format | TBD / To be confirmed for the Innoslate/course model. This repository does not define an LLM request schema. |
+| Data / message format | Current walking skeleton: local Python stub `stub_llm_api(map_data)` returns hard-coded JSON with `participant: LLM API`. No real model is called. Production schema TBD / To be confirmed. |
 
 Notes already present in team materials (not treated as a final course-model decision):
 
 - `docs/jingbo-plan/jingbo-demo.md` proposes **OpenAI API** as the LLM API.
-- The separate implementation repository [Wayly-mvp1](https://github.com/13haodeH/Wayly-mvp1) documents an optional **DeepSeek** path and a strict JSON response when that path is used.
 
 Which provider is canonical for the SYSEN 5151 Innoslate model remains **TBD / To be confirmed**.
 
@@ -68,9 +67,7 @@ Which provider is canonical for the SYSEN 5151 Innoslate model remains **TBD / T
 | Destination | Map Provider API |
 | Direction | Wayly System → Map Provider API (request), Map Provider API → Wayly System (response) |
 | Information exchanged | Map, location, or transport-estimate information needed to support itinerary presentation or static travel estimates |
-| Data / message format | TBD / To be confirmed. No map-provider name, endpoint, or payload is defined in this course repository. |
-
-The implementation repository README describes **static transport estimates** and does not document a named Map Provider API in its public environment example. The course model still includes this external entity; the concrete provider is TBD.
+| Data / message format | Current walking skeleton: local Python stub `stub_map_provider()` returns hard-coded JSON with `participant: Map Provider API` and a New York placeholder place. No real map vendor is called. Production provider and payload TBD / To be confirmed. |
 
 ## Boundary notes
 
@@ -89,6 +86,5 @@ Outside the Wayly System boundary:
 
 ## Sources used
 
-- This repository: `README.md`, `docs/jingbo-plan/jingbo-demo.md`
-- Implementation repository description: [Wayly-mvp1 README](https://github.com/13haodeH/Wayly-mvp1)
+- This repository: `README.md`, `docs/walking-skeleton.md`, `docs/jingbo-plan/jingbo-demo.md`
 - Innoslate model / course report: **not present in this repository** (alignment TBD)

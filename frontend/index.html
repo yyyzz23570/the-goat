@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wayly / the-goat — Lab 0</title>
+    <title>Wayly / the-goat — Walking Skeleton</title>
     <style>
       :root {
         color-scheme: light;
@@ -71,15 +71,16 @@
   </head>
   <body>
     <main>
-      <p class="kicker">SYSEN 5151 · Lab 0 readiness check</p>
+      <p class="kicker">SYSEN 5151 · Chapter 2 Walking Skeleton</p>
       <h1>Wayly / 途鉴</h1>
       <p>
-        This page calls the course API and renders a hard-coded New York itinerary
-        placeholder. It is not live planning.
+        This page demonstrates a stubbed New York itinerary path:
+        Traveler → Wayly System → Map Provider API stub → LLM API stub.
+        It is not live planning.
       </p>
       <section class="card">
         <p>
-          <button id="load-itinerary" type="button">Load hard-coded itinerary</button>
+          <button id="load-itinerary" type="button">Request stub itinerary</button>
         </p>
         <p id="status" class="status">Waiting for the API response.</p>
         <pre id="result" aria-live="polite"></pre>

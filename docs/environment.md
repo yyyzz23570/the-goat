@@ -2,7 +2,7 @@
 
 Documented from information that can be verified in this repository. Items that cannot be verified are marked **TBD / To be confirmed**.
 
-## This repository (`the-goat`) — Lab 0 baseline
+## This repository (`the-goat`) — current course baseline
 
 | Item | Current record | Evidence |
 | --- | --- | --- |
@@ -14,37 +14,21 @@ Documented from information that can be verified in this repository. Items that 
 | Development tools | Git, GitHub Actions, pytest | `.github/workflows/ci.yml`, `pytest.ini` |
 | Version control | Git + GitHub | Remote: `https://github.com/yyyzz23570/the-goat.git` |
 | VS Code | TBD / To be confirmed | `.gitignore` lists `.vscode/`; that does not prove the editor is in use |
-| Cursor | In use | Scaffold, documentation, and Lab 0 baseline |
+| Cursor | In use | Scaffold, documentation, Lab 0, and Walking Skeleton |
 | Local model / model runner | TBD / To be confirmed | Not present in this repository |
-| Runnable app in this repo | Lab 0 only: hard-coded API + page | `python backend/app.py` then `http://127.0.0.1:8000/` |
+| Runnable app in this repo | Walking Skeleton: Traveler page + stubbed Wayly System | `python backend/app.py` then `http://127.0.0.1:8000/` |
+| Map Provider API | Local hard-coded stub | `stub_map_provider()` in `backend/app.py` |
+| LLM API | Local hard-coded stub | `stub_llm_api(...)` in `backend/app.py` |
 
 ## Proposed tools already written in this repository
 
-From [`jingbo-plan/jingbo-demo.md`](jingbo-plan/jingbo-demo.md) (proposal by Jingbo He, **not required for Lab 0**):
+From [`jingbo-plan/jingbo-demo.md`](jingbo-plan/jingbo-demo.md) (proposal by Jingbo He, **not required for the Walking Skeleton**):
 
 | Item | Proposal |
 | --- | --- |
 | Data storage | SQLite |
 | Hosting | Netlify |
 | LLM API | OpenAI API |
-
-## Full implementation source to be migrated here
-
-The README names [Wayly-mvp1](https://github.com/13haodeH/Wayly-mvp1) as the current full product. A teammate will migrate that implementation into `the-goat`. Observed from that repository's public files (not installed here yet):
-
-| Item | Observed in Wayly-mvp1 | Notes |
-| --- | --- | --- |
-| Programming language | TypeScript | `tsconfig.json`, `.ts` project files |
-| Runtime | Node.js `>=22.13.0` | `package.json` `engines` |
-| Frontend technology | React | `package.json` dependencies |
-| App tooling | vinext / Vite | `package.json` scripts |
-| Package manager | npm | `package-lock.json` |
-| LLM | DeepSeek (optional key) | `.env.example` |
-| Other services | Optional Supabase | `.env.example` |
-| Map library | Leaflet dependency present | A named Map Provider API is still TBD / To be confirmed |
-| Local model / model runner | Not documented as a local runner | Cloud API key is optional |
-
-After the teammate migration, this document should be updated from the landed files.
 
 ## How to work in this course repository
 

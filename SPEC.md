@@ -8,6 +8,7 @@ Related files:
 
 - Product concept: [`README.md`](README.md)
 - System boundary: [`docs/context.md`](docs/context.md)
+- Walking Skeleton: [`docs/walking-skeleton.md`](docs/walking-skeleton.md)
 - Environment: [`docs/environment.md`](docs/environment.md)
 - Initial toolchain decision: [`docs/decisions/0001-initial-toolchain.md`](docs/decisions/0001-initial-toolchain.md)
 
@@ -27,7 +28,6 @@ Related files:
 - Geographic scope for this course repository: **New York**
 - In-scope for the current course stage
 - Out of scope / not claimed by this repository
-- Relationship to the current Beijing implementation source and the planned New York adaptation after migration
 
 ## 3. Operational concept (OpsCon)
 
@@ -70,21 +70,18 @@ Related files:
 
 ## 9. Constraints and assumptions
 
-- This repository is the course project repository
-- Lab 0 currently provides a hard-coded API and a page that renders it; that is not the full Wayly product
-- Do not reimplement the full application in parallel with the teammate migration
+- This repository is the course project repository for Wayly in New York
+- The Walking Skeleton currently provides a Traveler page, a Wayly System API, and hard-coded Map Provider API / LLM API stubs; that is not the full Wayly product
 - Technology choices: see ADR `0001-initial-toolchain.md`; unresolved items remain TBD
 
 ## 10. Verification and validation
 
 - Course documentation completeness
-- Lab 0: `python -m pytest -q` and GitHub Actions
+- Walking Skeleton: `python -m pytest -q` and GitHub Actions
 - Consistency with Innoslate and the course report TBD / To be confirmed
-- Full product verification belongs with the migrated application files once they are in this repository
 
 ## 11. Open items
 
 - Canonical LLM provider for the course model
 - Canonical map provider for the course model
 - Message formats for each context interaction
-- Exact layout of the migrated application in this repository (owned by the teammate doing the migration)

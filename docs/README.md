@@ -7,6 +7,7 @@ Project documentation for the SYSEN 5151 team project.
 | Document | Purpose |
 | --- | --- |
 | [context.md](context.md) | System boundary and external-entity interactions |
+| [walking-skeleton.md](walking-skeleton.md) | Chapter 2 stubbed end-to-end path |
 | [environment.md](environment.md) | Verified development-environment notes |
 | [prompt-log.md](prompt-log.md) | AI / Cursor assistance log |
 | [decisions/0001-initial-toolchain.md](decisions/0001-initial-toolchain.md) | Initial toolchain ADR |

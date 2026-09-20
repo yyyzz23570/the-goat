@@ -1,10 +1,10 @@
 # backend
 
-Lab 0 minimal API for Wayly / the-goat.
+Wayly System API for the Chapter 2 Walking Skeleton.
 
 `app.py` exposes:
 
 - `GET /api/health` — service check
-- `GET /api/itinerary` — **hard-coded** JSON response
+- `GET /api/itinerary` — calls `stub_map_provider()` then `stub_llm_api(...)` and returns hard-coded JSON
 
-This is a course readiness check. It does not generate itineraries, call an LLM, or call a map API. A teammate may later migrate the full Wayly implementation into this repository.
+This is a course demo. It does not generate live itineraries or call a real LLM or map API.
