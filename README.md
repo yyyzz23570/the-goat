@@ -57,9 +57,11 @@ the-goat/
 Requires Python 3.12+ (verified locally with Python 3.13).
 
 ```bash
-python -m pip install -r backend/requirements.txt
-python backend/app.py
+python3 -m pip install -r backend/requirements.txt
+python3 backend/app.py
 ```
+
+If your environment uses `python` instead of `python3`, replace it in the commands above.
 
 Then open `http://127.0.0.1:8000/`. The page should show **Hello from the-goat API!**, **New York**, and the Map Provider API / LLM API stubs from `GET /api/itinerary`.
 
@@ -73,13 +75,18 @@ GitHub Actions runs the same pytest job on push and pull request.
 
 ## Local demo
 
-1. In the repository root, run `npm ci`, then run `npm run dev`.
-2. Open the local address printed by the dev server in your browser and wait for the trip form to load.
-3. Enter your departure date in the date field.
-4. Fill in the available hours and group size for the trip.
-5. Add your total budget in USD using the **Total budget** field, and keep at least one interest selected or write a brief request in “Tell Wayly what you want to do”.
-6. Click **Build my NYC plan** to generate the itinerary.
-7. Review the result to confirm the generated sites, source links, and the estimated budget shown on the page.
+1. In the repository root, install the backend dependencies:
+   ```bash
+   python3 -m pip install -r backend/requirements.txt
+   ```
+2. Start the Flask app:
+   ```bash
+   python3 backend/app.py
+   ```
+3. Open `http://127.0.0.1:8000/` in your browser.
+4. The traveler page loads automatically and calls `GET /api/itinerary`.
+5. If the page has not rendered the response yet, click **Request stub itinerary**.
+6. Review the stubbed New York itinerary response, including the `status`, `city`, `stops`, and `call_sequence` fields.
 
 This is a local preview and does not represent real-time availability, ticketing, or traffic conditions.
 

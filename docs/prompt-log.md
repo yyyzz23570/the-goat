@@ -28,3 +28,13 @@ Truthful record of AI / Cursor help on the SYSEN 5151 `the-goat` repository. Thi
 **Prompt:** Update the stubbed end-to-end flow to follow UC.1.1, UC.1.3, UC.1.4, UC.1.5, UC.1.6, UC.1.7, and UC.1.9. Keep all participants local and hard-coded; do not add real model, map, POI, authentication, retry, or logging behavior. Update the tests and walking-skeleton documentation to verify the same order.
 
 **Result used:** Updated `backend/app.py`, `backend/test_app.py`, and `docs/walking-skeleton.md`. The LLM stub now selects from governed candidates before Wayly builds the itinerary; the Map Provider stub validates the built route afterward.
+
+## Local demo documentation alignment — 2026-11-17
+
+**Task:** Correct the README local-demo instructions so they match the actual Walking Skeleton implementation: a Python Flask app serving a static frontend page, not a Node/Vite dev server.
+
+**Tool:** Copilot / VS Code.
+
+**Prompt:** Update the local demo section in the repo README to use the repository's real startup flow and keep the instructions consistent with the web page and API behavior already in the code.
+
+**Result used:** Updated the root `README.md` to document the correct `python3 -m pip install -r backend/requirements.txt` and `python3 backend/app.py` flow, and to describe the actual page behavior at `http://127.0.0.1:8000/`.
