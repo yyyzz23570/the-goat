@@ -71,6 +71,18 @@ python -m pytest -q
 
 GitHub Actions runs the same pytest job on push and pull request.
 
+## Local demo
+
+1. In the repository root, run `npm ci`, then run `npm run dev`.
+2. Open the local address printed by the dev server in your browser and wait for the trip form to load.
+3. Enter your departure date in the date field.
+4. Fill in the available hours and group size for the trip.
+5. Add your total budget in USD using the **Total budget** field, and keep at least one interest selected or write a brief request in “Tell Wayly what you want to do”.
+6. Click **Build my NYC plan** to generate the itinerary.
+7. Review the result to confirm the generated sites, source links, and the estimated budget shown on the page.
+
+This is a local preview and does not represent real-time availability, ticketing, or traffic conditions.
+
 ## Current status
 
 - Course documentation is in place.
