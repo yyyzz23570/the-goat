@@ -48,3 +48,13 @@ Truthful record of AI / Cursor help on the SYSEN 5151 `the-goat` repository. Thi
 **Result used:** Merged the local `nyc-data` branch history, combined the README documentation and ignore rules, and preserved the existing Flask Walking Skeleton, course documentation, and CI. The source working tree's untracked `commit/` folder was not included. No external deployment or GitHub push was performed as part of this integration.
 
 **Verification repair:** The imported login component referenced a missing, ignored browser-client module. Added a disabled client placeholder returning null, consistent with the existing unavailable account-service API; no real authentication service was connected.
+
+## Documentation alignment — 2026-11-17
+
+**Task:** Align three stale references with the files the repository already uses.
+
+**Tool:** Cursor.
+
+**Prompt:** Make the smallest edits so the Milestone 1 script points at the NYC requirements, the backend README matches the walking-skeleton call order, and unused earlier planner files do not look like a second planner.
+
+**Result used:** Updated `docs/MILESTONE_1_TRACEABILITY.md` to cite `docs/SPEC.md`, updated `backend/README.md` so `stub_llm_api(...)` selects the route before `stub_map_provider(...)` validates it, and removed unused `lib/planner.ts` and `scripts/verify-catalog.mjs`. The current planner remains `lib/nyc-planner.ts`; the catalog check remains `npm run verify:catalog`.
