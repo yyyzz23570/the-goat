@@ -11,15 +11,25 @@ Desktop.ini
 *~
 
 # Environment and secrets
-.env
-.env.*
+.env*
 !.env.example
+*.pem
 
 # Dependencies and virtual environments
 node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 .venv/
 venv/
 env/
+
+# Testing
+/coverage
 
 # Build and cache
 dist/
@@ -29,8 +39,65 @@ build/
 pytest-cache-files-*/
 __pycache__/
 *.pyc
+/.next/
+/.vinext/
+/out/
+.vercel
+next-env.d.ts
+/.wrangler/
+/outputs/
+/work/
+*.tsbuildinfo
 
 # Logs and local artifacts
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 tmp/
 temp/
+
+# Local migration source retained outside version control.
+/data/*additions*
+/data/*audit*
+/data/*backlog*
+/data/*eval*
+/data/*freeze*
+/data/*manifest*
+/data/*.csv
+/data/*.xlsx
+/data/evaluation/
+/docs/mvp-v1/
+/docs/mvp-v2/
+/lib/baseline-evaluation.ts
+/lib/budget-feasibility.ts
+/lib/candidate-filtering.ts
+/lib/eval-v2-dataset.ts
+/lib/evaluation.ts
+/lib/generated/
+/lib/model-planner.ts
+/lib/places.ts
+/lib/plan-contract.ts
+/lib/plan-duration.ts
+/lib/planner.ts
+/lib/stop-count-policy.ts
+/lib/time-window-policy.ts
+/lib/tool-argument-guard.ts
+/lib/types.ts
+/scripts/*
+!/scripts/verify-nyc-catalog.mjs
+/app/ops/*
+!/app/ops/page.tsx
+!/app/ops/login/
+!/app/ops/login/page.tsx
+!/app/ops/login/layout.tsx
+/app/api/ops/
+/lib/auth.ts
+/lib/supabase.ts
+/lib/supabase-browser.ts
+/supabase/
+/.cursor/
+/.openai/
+/public/figma/
+/public/og.png

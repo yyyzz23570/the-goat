@@ -38,3 +38,13 @@ Truthful record of AI / Cursor help on the SYSEN 5151 `the-goat` repository. Thi
 **Prompt:** Update the local demo section in the repo README to use the repository's real startup flow and keep the instructions consistent with the web page and API behavior already in the code.
 
 **Result used:** Updated the root `README.md` to document the correct `python3 -m pip install -r backend/requirements.txt` and `python3 backend/app.py` flow, and to describe the actual page behavior at `http://127.0.0.1:8000/`.
+
+## Wayly NYC preview integration — 2026-11-17
+
+**Task:** Integrate the Wayly NYC preview into `develop` while retaining its original commit history.
+
+**Tool:** Codex.
+
+**Result used:** Merged the local `nyc-data` branch history, combined the README documentation and ignore rules, and preserved the existing Flask Walking Skeleton, course documentation, and CI. The source working tree's untracked `commit/` folder was not included. No external deployment or GitHub push was performed as part of this integration.
+
+**Verification repair:** The imported login component referenced a missing, ignored browser-client module. Added a disabled client placeholder returning null, consistent with the existing unavailable account-service API; no real authentication service was connected.

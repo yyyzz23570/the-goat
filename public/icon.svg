@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Wayly icon">
+  <rect width="512" height="512" rx="112" fill="#0f766e"/>
+  <circle cx="256" cy="256" r="152" fill="#f7f7f2"/>
+  <path d="M344 166 286 310l-118 58 58-144 118-58Z" fill="#0f766e"/>
+  <path d="m226 224 60 86-118 58 58-144Z" fill="#2dd4bf"/>
+  <circle cx="256" cy="256" r="24" fill="#f7f7f2"/>
+</svg>
